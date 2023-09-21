@@ -40,9 +40,11 @@ class App extends Component {
 
   filterContact = filterQuery => {
     this.setState(prev => ({
-      filteredContact: prev.contact.filter(el =>
-        el.name.toLowerCase().includes(filterQuery.toLowerCase())
-      ),
+      filteredContact: filterQuery
+        ? prev.contact.filter(el =>
+            el.name.toLowerCase().includes(filterQuery.toLowerCase())
+          )
+        : null,
     }));
   };
   render() {
