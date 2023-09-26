@@ -19,7 +19,7 @@ class App extends Component {
   state = JSON.parse(localStorage.getItem('state')) || initialState;
 
   componentDidUpdate() {
-    localStorage.getItem('state', JSON.stringify(this.state));
+    localStorage.setItem('state', JSON.stringify(this.state));
   }
 
   handleDelete = id => {
